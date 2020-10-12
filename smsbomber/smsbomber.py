@@ -922,25 +922,93 @@ if __name__ == "__main__":
     print('Введите количество повторов')
     raz = input()
     print('введено повторов ', raz)
+    print('Введите уровень мощности дд от 1 до 5 ')
+    ff = input()
+    print('введенный уровень ', ff)
+    ff=int(ff)
 
 
-    raz=int(raz)
-    for i in range(raz):
 
-            p1 = multiprocessing.Process(target=Sms_multi_1, args=(number,))
-            p2 = multiprocessing.Process(target=Sms_multi_2, args=(number,))
-            p3 = multiprocessing.Process(target=Sms_multi_3, args=(number,))
-            p4 = multiprocessing.Process(target=Sms_multi_4, args=(number,))
-            p5 = multiprocessing.Process(target=Sms_multi_5, args=(number,))
+    if ff==1:
+        raz=int(raz)
+        for i in range(raz):
 
-            p1.start()
-            p2.start()
-            p3.start()
-            p4.start()
-            p5.start()
+                p1 = multiprocessing.Process(target=Sms_multi_1, args=(number,))
 
-            p1.join()
-            p2.join()
-            p3.join()
-            p4.join()
-            p5.join()
+                p1.start()
+
+                p1.join()
+
+    if ff==2:
+        raz=int(raz)
+        for i in range(raz):
+
+                p1 = multiprocessing.Process(target=Sms_multi_1, args=(number,))
+                p2 = multiprocessing.Process(target=Sms_multi_2, args=(number,))
+
+                p1.start()
+                p2.start()
+
+                p1.join()
+                p2.join()
+
+
+    if ff==3:
+        raz=int(raz)
+        for i in range(raz):
+
+                p1 = multiprocessing.Process(target=Sms_multi_1, args=(number,))
+                p2 = multiprocessing.Process(target=Sms_multi_2, args=(number,))
+                p3 = multiprocessing.Process(target=Sms_multi_3, args=(number,))
+
+                p1.start()
+                p2.start()
+                p3.start()
+
+                p1.join()
+                p2.join()
+                p3.join()
+
+    if ff==4:
+        raz=int(raz)
+        for i in range(raz):
+
+                p1 = multiprocessing.Process(target=Sms_multi_1, args=(number,))
+                p2 = multiprocessing.Process(target=Sms_multi_2, args=(number,))
+                p3 = multiprocessing.Process(target=Sms_multi_3, args=(number,))
+                p4 = multiprocessing.Process(target=Sms_multi_4, args=(number,))
+
+                p1.start()
+                p2.start()
+                p3.start()
+                p4.start()
+
+                p1.join()
+                p2.join()
+                p3.join()
+                p4.join()
+
+    if ff==5:
+        raz=int(raz)
+        for i in range(raz):
+
+                p1 = multiprocessing.Process(target=Sms_multi_1, args=(number,))
+                p2 = multiprocessing.Process(target=Sms_multi_2, args=(number,))
+                p3 = multiprocessing.Process(target=Sms_multi_3, args=(number,))
+                p4 = multiprocessing.Process(target=Sms_multi_4, args=(number,))
+                p5 = multiprocessing.Process(target=Sms_multi_5, args=(number,))
+
+                p1.start()
+                p2.start()
+                p3.start()
+                p4.start()
+                p5.start()
+
+                p1.join()
+                p2.join()
+                p3.join()
+                p4.join()
+                p5.join()
+
+    if ff<1 or ff>5:
+        print('Нужно ввести от одно до пяти, давай по новой')
