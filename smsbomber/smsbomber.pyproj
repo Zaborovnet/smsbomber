@@ -22,6 +22,11 @@
     <DebugSymbols>true</DebugSymbols>
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'kkk' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+    <OutputPath>bin\kkk\</OutputPath>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="smsbomber.py" />
   </ItemGroup>

